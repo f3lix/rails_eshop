@@ -17,7 +17,7 @@
     <td><%= image_tag(p.image_url, class: 'list_image') %></td>
     <td class="list-description">
       <dl>
-        <dt><%= p.title %></dt>
+        <dt><b><%= p.title %></b></dt>
         <dd><%= truncate(strip_tags(p.description), length: 80) %></dd>
       </dl>
     </td>
