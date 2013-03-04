@@ -1,6 +1,7 @@
 <h1>Listing products</h1>
 
 <table>
+  <!--
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -10,20 +11,24 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.title %></td>
-    <td><%= product.description %></td>
-    <td><%= product.image_url %></td>
-    <td><%= product.price %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+-->
+<% @products.each do |p| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= image_tag(p.image_url, class: 'list_image') %></td>
+    <td class="list-description">
+      <dl>
+        <dt><%= p.title %></dt>
+        <dd><%= truncate(strip_tags(p.description), length: 80) %></dd>
+      </dl>
+    </td>
+    <td><%= p.price %></td>
+    <td class="list_actions">
+      <%= link_to 'Show', p %><br/>
+      <%= link_to 'Edit', edit_product_path(p) %>
+      <%= link_to 'Destroy', p, confirm: 'Are you sure?', method: :delete %>
+    </td>
   </tr>
 <% end %>
 </table>
-
 <br />
-
 <%= link_to 'New Product', new_product_path %>
