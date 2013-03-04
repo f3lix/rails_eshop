@@ -43,10 +43,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="#">Project name</a>
+          <%= link_to('Rails Eshop', { controller: 'store', action: 'index' }, class: 'brand') %>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li><%= link_to('Home', { controller: 'store', action: 'index' }, class: 'active') %></li>
+              <li><%= link_to('Products', { controller: 'products', action: 'index' }) %></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="dropdown">

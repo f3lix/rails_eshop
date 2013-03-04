@@ -18,10 +18,10 @@
     <td class="list-description">
       <dl>
         <dt><b><%= p.title %></b></dt>
-        <dd><%= truncate(strip_tags(p.description), length: 80) %></dd>
+        <dd><%= raw p.description %></dd>
       </dl>
     </td>
-    <td><%= p.price %></td>
+    <td>$<%= p.price %></td>
     <td class="list_actions">
       <%= link_to 'Show', p %><br/>
       <%= link_to 'Edit', edit_product_path(p) %>
