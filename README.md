@@ -12,8 +12,8 @@
 <li>Modify <b>config/database.yml</b>, get your database online</li>
 <li>Run <b>$ bundle install</b> to resolve dependencies</li>
 <li>Run <b>$ rake db:create</b> to create database defined in <b>config/database.yml</b></li>
-<li>Run <b>$ rake db:seed</b> to feed your database with some test data</li>
 <li>Run <b>$ rake db:migrate</b> to run the migrations</li>
+<li>Run <b>$ rake db:seed</b> to feed your database with some test data</li>
 </ul>
 <h2>How to run</h2>
 <ul>

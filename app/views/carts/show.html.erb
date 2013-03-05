@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<!-- <%= link_to 'Edit', edit_cart_path(@cart) %> | -->
+<%= link_to 'Back', products_path, class: 'btn' %>
 <ul>
   <% @cart.line_items.each do |i| %>
   <li><h4><%= i.product.title %></h4></li>

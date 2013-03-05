@@ -48,7 +48,8 @@
             <ul class="nav">
               <li><%= link_to('Home', { controller: 'store', action: 'index' }, class: 'active') %></li>
               <li><%= link_to('Products', { controller: 'products', action: 'index' }) %></li>
-              <li><%= link_to('Shopping Cart', { controller: 'carts', action: 'index' }) %></li>
+              <li><%= link_to('Shopping Cart', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
+              <!--
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
               <li class="dropdown">
@@ -62,7 +63,7 @@
                   <li><a href="#">Separated link</a></li>
                   <li><a href="#">One more separated link</a></li>
                 </ul>
-              </li>
+              </li>-->
             </ul>
             <form class="navbar-form pull-right">
               <input class="span2" type="text" placeholder="Email">
