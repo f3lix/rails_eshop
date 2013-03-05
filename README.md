@@ -10,12 +10,13 @@
 <li>Git clone <b>https://github.com/f3lix/rails_eshop</b></li>
 <li><b>$ cd rails_eshop</b></li>
 <li>Modify <b>config/database.yml</b>, get your database online</li>
-<li>Run <b>$ bundle install</b></li>
-<li>Run <b>$ rake db:migrate</b></li>
+<li>Run <b>$ bundle install</b> to resolve dependencies</li>
+<li>Run <b>$ rake db:create</b> to create database defined in <b>config/database.yml</b></li>
+<li>Run <b>$ rake db:migrate</b> to run the migrations</li>
 </ul>
 <h2>How to run</h2>
 <ul>
-<li>Run <b>$ rails s</b></li>
+<li>Run <b>$ rails s</b> to start WEBrick on port 3000 by default</li>
 </ul>
 <h2>How to test</h2>
 <ul>

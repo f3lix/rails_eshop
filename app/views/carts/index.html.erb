@@ -1,11 +1,12 @@
+<table>
 <% @carts.each do |cart| %>
   <tr>
     <td><b>Cart ID:</b> <%= cart.id %>&nbsp;&nbsp;</td>
     <td><b>Create Time:</b> <%= cart.created_at %>&nbsp;&nbsp;</td>
     <td><b>Create Time:</b> <%= cart.updated_at %>&nbsp;&nbsp;</td>
-    <td><%= link_to 'Show', cart %></td>
-    <td><%= link_to 'Edit', edit_cart_path(cart) %></td>
-    <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', cart %>&nbsp;</td>
+    <td><%= link_to 'Edit', edit_cart_path(cart) %>&nbsp;</td>
+    <td><%= link_to 'Destroy', cart, method: :delete, data: { confirm: 'Are you sure?' } %>&nbsp;</td>
   </tr>
 <% end %>
 </table>
