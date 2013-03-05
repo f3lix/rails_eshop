@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+ruby:
+  title: Programming Rails
+  description: You will learn how to identify a nice ruby in this book.
+  image_url: rails.png
+  price: 59.99
