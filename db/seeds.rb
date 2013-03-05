@@ -44,3 +44,38 @@ Product.create(title: 'CUDA by Example: An Introduction to General-Purpose GPU P
 <p>CUDA by Example, written by two senior members of the CUDA software platform team, shows programmers how to employ this new technology. The authors introduce each area of CUDA development through working examples. After a concise introduction to the CUDA platform and architecture, as well as a quick-start guide to CUDA C, the book details the techniques and trade-offs associated with each key CUDA feature. You'll discover when to use each CUDA C extension and how to write CUDA software that delivers truly outstanding performance.</p>},
 	image_url: 'cuda.jpg',
 	price: 28.18)
+
+Product.create(title: 'Pro C# 5.0 and the .NET 4.5 Framework',
+	description: %{<p>This new edition of Pro C# 5.0 and the .NET 4.5 Platform has been completely revised and rewritten to reflect the latest changes to the C# language specification and new advances in the .NET Framework. You'll find new chapters covering all the important new features that make .NET 4.5 the most comprehensive release yet.</p>},
+	image_url: 'procsharp.jpg',
+	price: 33.48)
+
+Product.create(title: 'CLR via C#',
+	description: %{<p>Dig deep and master the intricacies of the common language runtime, C#, and .NET development. Led by programming expert Jeffrey Richter, a longtime consultant to the Microsoft .NET team, you'll gain pragmatic insights for building robust, reliable, and responsive apps and components.</p>},
+	image_url: 'clr.jpg',
+	price: 33.48)
+
+Product.create(title: 'C# in Depth, Second Edition',
+	description: %{<p>C# has changed significantly since it was first introduced. With the many upgraded features, C# is more expressive than ever. However, an in depth understanding is required to get the most out of the language.</p>
+<p>C# in Depth, Second Edition is a thoroughly revised, up-to-date book that covers the new features of C# 4 as well as Code Contracts. In it, you'll see the subtleties of C# programming in action, learning how to work with high-value features that you'll be glad to have in your toolkit. The book helps readers avoid hidden pitfalls of C# programming by understanding "behind the scenes" issues.</p>
+<p>Purchase of the print book comes with an offer of a free PDF, ePub, and Kindle eBook from Manning. Also available is all code from the book.</p>},
+	image_url: 'csharpdepth.jpg',
+	price: 29.13)
+
+Product.create(title: 'Programming Windows: Writing Windows 8 Apps With C# and XAML',
+	description: %{<p>Reimagined for full-screen and touch-optimized apps, Windows 8 provides a platform for reaching new users in new ways. In response, programming legend Charles Petzold is rewriting his classic Programming Windows-one of the most popular programming books of all time-to show developers how to use existing skills and tools to build Windows 8 apps.</p>},
+	image_url: 'prowin.jpg',
+	price: 37.79)
+
+Product.create(title: 'JavaScript: The Definitive Guide: Activate Your Web Pages',
+	description: %{<p>Since 1996, JavaScript: The Definitive Guide has been the bible for JavaScript programmers-a programmer's guide and comprehensive reference to the core language and to the client-side JavaScript APIs defined by web browsers.</p>
+<p>The 6th edition covers HTML5 and ECMAScript 5. Many chapters have been completely rewritten to bring them in line with today's best web development practices. New chapters in this edition document jQuery and server side JavaScript. It's recommended for experienced programmers who want to learn the programming language of the Web, and for current JavaScript programmers who want to master it.</p>},
+	image_url: 'js.jpg',
+	price: 31.04)
+
+Product.create(title: 'The Definitive Guide to HTML5',
+	description: %{<p>The Definitive Guide to HTML5 provides the breadth of information you'll need to start creating the next generation of HTML5 websites. It covers all the base knowledge required for standards-compliant, semantic, modern website creation. It also covers the full HTML5 ecosystem and the associated APIs that complement the core HTML5 language.</p>
+<p>The Definitive Guide to HTML5 begins by tackling the basics of HTML5, ensuring that you know best practices and key uses of all of the important elements, including those new to HTML5. This section also covers extended usage of CSS3, JavaScript, and DOM manipulation, making you proficient in all core aspects of modern website creation.</p>
+<p>The final part of the book covers the associated W3C APIs that surround the HTML5 specification. You will achieve a thorough working knowledge of the Geolocation API, web storage, creating offline applications, and the new drag and drop functionality. The Definitive Guide to HTML5 also dives into the key media enhancements of HTML5 and its surrounding technologies: Canvas, video and audio.</p>},
+	image_url: 'html5.jpg',
+	price: 25.10)

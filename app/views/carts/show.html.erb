@@ -3,14 +3,12 @@
 
 <%= link_to 'Edit', edit_cart_path(@cart) %> |
 <%= link_to 'Back', carts_path %>
-<% total_price = 0 %>
 <ul>
   <% @cart.line_items.each do |i| %>
   <li><h4><%= i.product.title %></h4></li>
   <li><b>Quantity:</b><%= i.quantity %></li>
-  <li><b>Price:</b><%= number_to_currency(i.quantity * i.product.price) %></li>
-  <% total_price += i.quantity * i.product.price %>
+  <li><b>Price:</b><%= number_to_currency(i.total_price) %></li>
   <% end %>
 </ul>
-<h3><b>Total Price:</b><%= number_to_currency(total_price) %></h3>
+<h3><b>Total Price:</b><%= number_to_currency(@cart.total_price) %></h3>
 <%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn" %>
