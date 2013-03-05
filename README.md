@@ -7,11 +7,12 @@
 [![Build Status](https://travis-ci.org/f3lix/rails_eshop.png)](https://travis-ci.org/f3lix/rails_eshop)
 <h2>How to deploy</h2>
 <ul>
-<li>Git clone <b>https://github.com/f3lix/rails_eshop</b></li>
+<li><b>$ git clone https://github.com/f3lix/rails_eshop</b></li>
 <li><b>$ cd rails_eshop</b></li>
 <li>Modify <b>config/database.yml</b>, get your database online</li>
 <li>Run <b>$ bundle install</b> to resolve dependencies</li>
 <li>Run <b>$ rake db:create</b> to create database defined in <b>config/database.yml</b></li>
+<li>Run <b>$ rake db:seed</b> to feed your database with some test data</li>
 <li>Run <b>$ rake db:migrate</b> to run the migrations</li>
 </ul>
 <h2>How to run</h2>
