@@ -7,22 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-<div id="banner">
-  <%= image_tag("rails.png") %>
-  <%= @page_title || "Store" %>
-</div>
-<div id="columns">
-	<div id="side">
-		<ul>
-			<li><a href="#">HOME</a></li>
-			<li><a href="#">FAQ</a></li>
-			<li><a href="#">NEWS</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-	</div>
     <div id="main">
       <%= yield %>
 	</div>
-</div>
 </body>
 </html>
