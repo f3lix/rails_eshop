@@ -49,6 +49,7 @@
               <li><%= link_to('Home', { controller: 'store', action: 'index' }, class: 'active') %></li>
               <li><%= link_to('Products', { controller: 'products', action: 'index' }) %></li>
               <li><%= link_to('Shopping Cart', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
+              <li><%= link_to('About', { controller: 'about', action: 'index' }) %></li>
               <!--
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -77,7 +78,7 @@
     <div class="container">
       <div class="hero-unit">
         <h1>Welcome to the shop!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p>I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
         <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
       </div>
       <%= yield %>
