@@ -21,7 +21,7 @@
         <dd><%= raw p.description %></dd>
       </dl>
     </td>
-    <td>$<%= p.price %></td>
+    <td><%= number_to_currency(p.price) %></td>
     <td class="list_actions">
       <%= link_to 'Show', p %><br/>
       <%= link_to 'Edit', edit_product_path(p) %>
