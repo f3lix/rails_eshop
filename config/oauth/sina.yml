@@ -1,10 +1,10 @@
 development:
-      key:    "you api key"
-      secret: "your secret"
+      key:    "844265480"
+      secret: "dcce011df877a294caf032b045700a98"
       url:    "http://guangyao.li"
       callback: "http://localhost:3000/oauth"
 production:
-      key:    "you api key"
-      secret: "your secret"
+      key:    "844265480"
+      secret: "dcce011df877a294caf032b045700a98"
       url:    "http://guangyao.li"
       callback: "http://localhost:3000/oauth"
