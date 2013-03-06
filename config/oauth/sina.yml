@@ -1,0 +1,10 @@
+development:
+      key:    "you api key"
+      secret: "your secret"
+      url:    "http://guangyao.li"
+      callback: "http://localhost:3000/oauth"
+production:
+      key:    "you api key"
+      secret: "your secret"
+      url:    "http://guangyao.li"
+      callback: "http://localhost:3000/oauth"

@@ -37,3 +37,7 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+# For oauth use
+gem 'oauth'
+gem 'oauth_china'
