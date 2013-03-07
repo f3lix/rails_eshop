@@ -41,3 +41,5 @@ gem 'jquery-rails'
 # For oauth use
 gem 'oauth'
 gem 'oauth_china'
+
+gem 'annotate', ">=2.5.0"

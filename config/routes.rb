@@ -1,4 +1,6 @@
 RailsEshop::Application.routes.draw do
+  get "users/new"
+
   get "about/index"
 
   resources :line_items

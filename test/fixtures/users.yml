@@ -1,21 +1,20 @@
 # == Schema Information
 #
-# Table name: line_items
+# Table name: users
 #
 #  id         :integer          not null, primary key
-#  product_id :integer
-#  cart_id    :integer
+#  name       :string(255)
+#  email      :string(255)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  quantity   :integer          default(1)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  product_id: 1
-  cart_id: 1
+  name: MyString
+  email: MyString
 
 two:
-  product_id: 1
-  cart_id: 1
+  name: MyString
+  email: MyString
