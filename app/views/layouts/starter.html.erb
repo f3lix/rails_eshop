@@ -35,6 +35,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
     <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
@@ -82,18 +83,5 @@
       <%= yield %>
     </div> <!-- /container -->
     </div>
-    <%= javascript_include_tag "jquery" %>
-    <%= javascript_include_tag "bootstrap-transition" %>
-    <%= javascript_include_tag "bootstrap-alert" %>
-    <%= javascript_include_tag "bootstrap-modal" %>
-    <%= javascript_include_tag "bootstrap-dropdown" %>
-    <%= javascript_include_tag "bootstrap-scrollspy" %>
-    <%= javascript_include_tag "bootstrap-tab" %>
-    <%= javascript_include_tag "bootstrap-tooltip" %>
-    <%= javascript_include_tag "bootstrap-popover" %>
-    <%= javascript_include_tag "bootstrap-button" %>
-    <%= javascript_include_tag "bootstrap-collapse" %>
-    <%= javascript_include_tag "bootstrap-carousel" %>
-    <%= javascript_include_tag "bootstrap-typeahead" %>
   </body>
 </html>
