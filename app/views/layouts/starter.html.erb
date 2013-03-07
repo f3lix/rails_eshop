@@ -72,11 +72,14 @@
         </div>
       </div>
     </div>
-
+    <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
     <div class="container">
       <%= yield %>
     </div> <!-- /container -->
-
+    </div>
     <%= javascript_include_tag "jquery" %>
     <%= javascript_include_tag "bootstrap-transition" %>
     <%= javascript_include_tag "bootstrap-alert" %>
