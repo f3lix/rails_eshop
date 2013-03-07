@@ -79,3 +79,7 @@ Product.create(title: 'The Definitive Guide to HTML5',
 <p>The final part of the book covers the associated W3C APIs that surround the HTML5 specification. You will achieve a thorough working knowledge of the Geolocation API, web storage, creating offline applications, and the new drag and drop functionality. The Definitive Guide to HTML5 also dives into the key media enhancements of HTML5 and its surrounding technologies: Canvas, video and audio.</p>},
 	image_url: 'html5.jpg',
 	price: 25.10)
+
+User.create(name: 'Felix Li', email: 'leegyao@gmail.com', password: 'admin@ecnu', password_confirmation: 'admin@ecnu')
+
+User.create(name: 'Rex Lin', email: 'zero2lin@gmail.com', password: 'admin@ecnu', password_confirmation: 'admin@ecnu')
