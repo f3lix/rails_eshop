@@ -21,7 +21,7 @@ class CartsController < ApplicationController
 
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid shopping cart #{params[:id]}."
-      redirect_to store_url, notice: 'Invalid cart'
+      redirect_to store_url # , notice: 'Invalid cart'
     else
       respond_to do |format|
         format.html # show.html.erb

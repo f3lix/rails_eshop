@@ -15,7 +15,7 @@ RailsEshop::Application.routes.draw do
 
   resources :users
   
-
+  resources :sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -68,6 +68,8 @@ RailsEshop::Application.routes.draw do
   root :to => 'store#index', :as => 'store'
 
   match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
