@@ -6,6 +6,9 @@
   <% @users.each do |u| %>
   <%= gravatar_for u %>
   <h4><%= link_to u.name, u %></h4>
+  <% if current_user.admin? && !current_user?(u) %>
+  <%= link_to "delete", u, method: :delete, confirm: "Are you sure?" %>
+  <% end %>
   <% end %>
 </div>
 <%= will_paginate %>

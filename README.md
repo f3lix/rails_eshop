@@ -11,9 +11,10 @@
 <li><b>$ cd rails_eshop</b></li>
 <li>Modify <b>config/database.yml</b>, get your database online</li>
 <li>Run <b>$ bundle install</b> to resolve dependencies</li>
-<li>Run <b>$ rake db:create</b> to create database defined in <b>config/database.yml</b></li>
-<li>Run <b>$ rake db:migrate</b> to run the migrations</li>
-<li>Run <b>$ rake db:seed</b> to feed your database with some test data</li>
+<li>Run <b>$ bundle exec rake db:create</b> to create database defined in <b>config/database.yml</b></li>
+<li>Run <b>$ bundle exec rake db:migrate</b> to run the migrations</li>
+<li>Run <b>$ bundle exec rake db:seed</b> to feed your database with some test data</li>
+<li>Run <b>$ bundle exec rake db:test:prepare</b> to make your database ready</li>
 </ul>
 <h2>How to run</h2>
 <ul>
@@ -21,7 +22,7 @@
 </ul>
 <h2>How to test</h2>
 <ul>
-<li>Run <b>$ rake test</b> on your machine</li>
+<li>Run <b>$ bundle exec rake test</b> on your machine</li>
 <li>Check build logs through <b><a href="https://travis-ci.org/f3lix/rails_eshop/builds" target="_block">https://travis-ci.org/f3lix/rails_eshop/builds</a></b></li>
 </ul>
 <h2>Dev Env</h2>
