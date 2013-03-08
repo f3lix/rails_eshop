@@ -3,14 +3,17 @@ class UsersController < ApplicationController
 
   before_filter :signed_in_user, only: [:edit, :update]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: :destroy
+  before_filter :admin_user, only: [:index, :destroy]
 
   def index
     # @users = User.all
+    # if current_user.admin?
     @users = User.paginate(page: params[:page])
     #if @user
     #  redirect_to @user
-    #end
+    # else
+    #  redirect_to current_user
+    # end
   end
 
   def new
@@ -69,6 +72,6 @@ class UsersController < ApplicationController
   end
 
   def admin_user
-    redirect_to(root_path) unless current_user.admin?
+    redirect_to store_path unless current_user.admin?
   end
 end
