@@ -44,3 +44,10 @@ gem 'oauth_china'
 
 # To annotate database schema
 gem 'annotate', ">=2.5.0"
+
+# Generate fake data
+gem 'faker', '1.1.2'
+
+# Paginate
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
