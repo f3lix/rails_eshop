@@ -23,7 +23,7 @@
 <h2>How to test</h2>
 <ul>
 <li>Run <b>$ bundle exec rake test</b> on your machine</li>
-<li>Check build logs through <b><a href="https://travis-ci.org/f3lix/rails_eshop/builds" target="_block">https://travis-ci.org/f3lix/rails_eshop/builds</a></b></li>
+<li>Or you can check build log per each commit through <b><a href="https://travis-ci.org/f3lix/rails_eshop/builds" target="_block">https://travis-ci.org/f3lix/rails_eshop/builds</a></b></li>
 </ul>
 <h2>Dev Env</h2>
 <ul>

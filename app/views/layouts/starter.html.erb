@@ -55,6 +55,11 @@
               <li><%= link_to('Shopping Cart', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
               <li><%= link_to('About', { controller: 'about', action: 'index' }) %></li>
             </ul>
+            <div class="nav-collapse collapse">
+              <form class="navbar-search pull-left">
+                <input type="text" class="search-query" placeholder="Search">
+              </form>
+            </div>
             <ul class="nav pull-right">
               <% if signed_in %>
               <li class="dropdown">
