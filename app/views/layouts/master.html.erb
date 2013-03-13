@@ -49,7 +49,6 @@
             <ul class="nav">
               <li><%= link_to('Home', store_path, class: 'active') %></li>
               <li><%= link_to('Products', products_path) %></li>
-              <li><%= link_to('Shopping Cart', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
               <li><%= link_to('About', { controller: 'about', action: 'index' }) %></li>
             </ul>
             <div class="nav-collapse collapse">
@@ -58,6 +57,7 @@
               </form>
             </div>
             <ul class="nav pull-right">
+              <li><%= link_to('Shopping Cart (' + number_to_currency(current_cart.total_price) + ')', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
               <% if signed_in %>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @current_user.name %> <b class="caret"></b></a>
@@ -89,7 +89,7 @@
       <%= yield %>
       <hr>
       <footer>
-        <p>Felix Studio &copy; 2013</p>
+        <p>&copy; Copyright 2013 RailsEshop. All rights reserved</p>
       </footer>
     </div>
     <%= javascript_include_tag "application" %>
