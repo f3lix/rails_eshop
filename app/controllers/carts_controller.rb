@@ -15,14 +15,18 @@ class CartsController < ApplicationController
   # GET /carts/1.json
   def show
     begin
-    @cart = Cart.find(params[:id])
 
+    if(session[:cart_id] == nil)
+      @cart = Cart.create
+    else
+      @cart = Cart.find(params[:id])
+    end
     # error handling for unknown cart id
 
-    rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid shopping cart #{params[:id]}."
-      redirect_to store_url # , notice: 'Invalid cart'
-    else
+    # rescue ActiveRecord::RecordNotFound
+    #   logger.error "Attempt to access invalid shopping cart #{params[:id]}."
+    #   redirect_to store_url # , notice: 'Invalid cart'
+    # else
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @cart }

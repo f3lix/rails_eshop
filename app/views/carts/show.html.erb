@@ -1,5 +1,13 @@
 <%= provide(:title, "Shopping Cart") %>
 
+<% if @cart.line_items.empty? %>
+
+<h3>Your shopping cart is empty.</h3>
+
+<% else %>
+
+<%= provide(:title, "Shopping Cart") %>
+
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Back', products_path, class: 'btn' %>
@@ -12,3 +20,5 @@
 </ul>
 <h3><b>Total Price:</b><%= number_to_currency(@cart.total_price) %></h3>
 <%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn" %>
+
+<% end %>
