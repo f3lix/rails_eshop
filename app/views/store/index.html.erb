@@ -11,7 +11,7 @@
   	<!--<%= sanitize(p.description) %>-->
   	<p class="price"><b><%= number_to_currency(p.price) %><b></p>
   	<p><%= link_to 'View Details', p, class: 'btn' %></p>
-  	<p><%= button_to 'Add to Cart', line_items_path(product_id: p), class: 'btn btn-success' %></p>
+  	<p><%= button_to 'Add to Cart', line_items_path(product_id: p), class: 'btn btn-success', remote: true %></p>
   </div>
   <% end %>
 </div>

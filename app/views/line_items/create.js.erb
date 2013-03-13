@@ -1,0 +1,1 @@
+$('#top-cart').html("<%=j link_to('Shopping Cart (' + number_to_currency(current_cart.total_price) + ')', { controller: 'carts', action: 'show', id: session[:cart_id] }) %>")

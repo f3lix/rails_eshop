@@ -57,7 +57,7 @@
               </form>
             </div>
             <ul class="nav pull-right">
-              <li><%= link_to('Shopping Cart (' + number_to_currency(current_cart.total_price) + ')', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
+              <li id="top-cart"><%= link_to('Shopping Cart (' + number_to_currency(current_cart.total_price) + ')', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
               <% if signed_in %>
               <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= @current_user.name %> <b class="caret"></b></a>
