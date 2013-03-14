@@ -1,4 +1,7 @@
 RailsEshop::Application.routes.draw do
+  resources :orders
+
+
   get "users/new"
 
   get "about/index"

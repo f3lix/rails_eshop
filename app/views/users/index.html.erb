@@ -5,9 +5,13 @@
 <div class="users">
   <% @users.each do |u| %>
   <%= gravatar_for u %>
+  <br />
   <h4><%= link_to u.name, u %></h4>
   <% if current_user.admin? && !current_user?(u) %>
-  <%= link_to "delete", u, method: :delete, confirm: "Are you sure?" %>
+  <%= link_to "delete", u, method: :delete, confirm: "Are you sure?", class: 'btn' %>
+  &nbsp;
+  <br />
+  <br />
   <% end %>
   <% end %>
 </div>

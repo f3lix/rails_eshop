@@ -19,6 +19,7 @@
   <% end %>
 </ul>
 <h3><b>Total Price:</b><%= number_to_currency(@cart.total_price) %></h3>
+<%= button_to 'Checkout', new_order_path, method: :get, class: "btn" %>
 <%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn" %>
 
 <% end %>
