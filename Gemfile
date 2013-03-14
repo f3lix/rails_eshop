@@ -51,3 +51,7 @@ gem 'faker', '1.1.2'
 # Paginate
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+
+group :test, :development do
+  gem "rspec-rails", "~> 2.0"
+end
