@@ -9,6 +9,8 @@
 #  price       :decimal(10, 2)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category    :string(255)      default("default")
+#  stock       :integer          default(1)
 #
 
 class Product < ActiveRecord::Base
