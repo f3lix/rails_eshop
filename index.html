@@ -27,49 +27,53 @@
         </ul>
       </header>
       <section>
-        <h2>About</h2>
+        <h1>About</h1>
 
-<pre><code>A simple eshop project created with Ruby on Rails.
-Created by Felix Li &lt; leegyao@gmail.com &gt; 
+<pre><code># A simple eshop project created with Ruby on Rails.
+# Created by Felix Li &lt; leegyao@gmail.com &gt; 
 </code></pre>
 
-<h2>Build Status</h2>
+<h1>Build Status</h1>
 
 <p><a href="https://travis-ci.org/f3lix/rails_eshop"><img src="https://travis-ci.org/f3lix/rails_eshop.png" alt="Build Status"></a></p>
 
-<h2>How to deploy</h2>
+<h1>How to deploy</h1>
 
 <pre><code>$ git clone https://github.com/f3lix/rails_eshop
 $ cd rails_eshop
 $ vim config/database.yml
-Modify config/database.yml, get your database online
+# Modify config/database.yml, get your database online
 $ bundle install
-Resolve dependencies
+# Resolve dependencies
 $ bundle exec rake db:create
-Create database according to db/schema.rb
-$ bundle exec rake db:migrate to run the migrations
-$ bundle exec rake db:seed to feed your database with some test data
-$ bundle exec rake db:test:prepare to make your database ready
+# Create database according to db/schema.rb
+$ bundle exec rake db:migrate
+# Run the migrations
+$ bundle exec rake db:seed
+$ bundle exec rake db:populate
+# Feed your database with some test data
+$ bundle exec rake db:test:prepare
+# Make your database ready
 </code></pre>
 
-<h2>How to run</h2>
+<h1>How to run</h1>
 
 <pre><code>$ rails s
-Start WEBrick on port 3000 by default
+# Start WEBrick on port 3000 by default
 </code></pre>
 
-<h2>How to test</h2>
+<h1>How to test</h1>
 
 <pre><code>$ bundle exec rake test on your machine
 $ bundle exec rake spec
-Run the repec test scripts
+# Run the repec test scripts
 </code></pre>
 
 <h2>Dev Env</h2>
 
-<pre><code>Ruby 1.9.3
-Rails 3.2.12
-MySQL Community Server 5.5.24
+<pre><code># Ruby 1.9.3
+# Rails 3.2.12
+# MySQL Community Server 5.5.24
 </code></pre>
       </section>
     </div>
