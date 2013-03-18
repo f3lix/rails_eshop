@@ -4,40 +4,52 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Rails eshop by f3lix</title>
-
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
+
       <header>
         <h1>Rails eshop</h1>
         <p>A eshop project created with Ruby on Rails.</p>
-        <p class="view"><a href="https://github.com/f3lix/rails_eshop">View the Project on GitHub <small>f3lix/rails_eshop</small></a></p>
-        <ul>
-          <li><a href="https://github.com/f3lix/rails_eshop/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/f3lix/rails_eshop/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/f3lix/rails_eshop">View On <strong>GitHub</strong></a></li>
-        </ul>
       </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/f3lix/rails_eshop" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/f3lix/rails_eshop/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/f3lix/rails_eshop/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
       <section>
-        <h1>About</h1>
+        <h2>About</h2>
 
 <pre><code># A simple eshop project created with Ruby on Rails.
 # Created by Felix Li &lt; leegyao@gmail.com &gt; 
 </code></pre>
 
-<h1>Build Status</h1>
+<h2>Build Status</h2>
 
 <p><a href="https://travis-ci.org/f3lix/rails_eshop"><img src="https://travis-ci.org/f3lix/rails_eshop.png" alt="Build Status"></a></p>
 
-<h1>How to deploy</h1>
+<h2>How to deploy</h2>
 
 <pre><code>$ git clone https://github.com/f3lix/rails_eshop
 $ cd rails_eshop
@@ -56,31 +68,31 @@ $ bundle exec rake db:test:prepare
 # Make your database ready
 </code></pre>
 
-<h1>How to run</h1>
+<h2>How to run</h2>
 
 <pre><code>$ rails s
 # Start WEBrick on port 3000 by default
 </code></pre>
 
-<h1>How to test</h1>
+<h2>How to test</h2>
 
 <pre><code>$ bundle exec rake test on your machine
 $ bundle exec rake spec
 # Run the repec test scripts
 </code></pre>
 
-<h2>Dev Env</h2>
+<h2>Dev Environment</h2>
 
 <pre><code># Ruby 1.9.3
 # Rails 3.2.12
 # MySQL Community Server 5.5.24
 </code></pre>
       </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/f3lix">f3lix</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/f3lix">f3lix</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
   </body>
