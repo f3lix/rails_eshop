@@ -1,4 +1,7 @@
 RailsEshop::Application.routes.draw do
+  resources :categories
+
+
   resources :orders
 
 
