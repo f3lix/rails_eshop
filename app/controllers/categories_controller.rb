@@ -14,12 +14,14 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])
-
+    @products = Category.find(params[:id]).products
+    # @category = Category.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @category }
+      format.json { render json: @products }
     end
+    rescue ActiveRecord::RecordNotFound
+      redirect_to store_url
   end
 
   # GET /categories/new

@@ -1,15 +1,37 @@
-<p id="notice"><%= notice %></p>
+<%= provide(:title, "Products") %>
 
-<p>
-  <b>Title:</b>
-  <%= @category.title %>
-</p>
+<h1>Listing products</h1>
 
-<p>
-  <b>Description:</b>
-  <%= @category.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<table>
+  <!--
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+-->
+<% @products.each do |p| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= image_tag(p.image_url, class: 'list_image') %></td>
+    <td class="list-description">
+      <dl>
+        <dt><b><%= p.title %></b></dt>
+        <dd><%= raw p.description %></dd>
+      </dl>
+    </td>
+    <td><p class="price"><%= number_to_currency(p.price) %></p></td>
+    <td class="list_actions">
+      <p><%= link_to 'View', p, class: 'btn' %></p>
+      <p><%= link_to 'Edit', edit_product_path(p) , class: 'btn'%></p>
+      <p><%= link_to 'Destroy', p, confirm: 'Are you sure?', method: :delete, class: 'btn' %></p>
+      <p><%= button_to 'Add to Cart', line_items_path(product_id: p), class: 'btn' %></p>
+    </td>
+  </tr>
+<% end %>
+</table>
+<br />
+<%= link_to 'New Product', new_product_path %>
