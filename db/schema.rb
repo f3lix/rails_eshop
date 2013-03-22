@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130322133904) do
+ActiveRecord::Schema.define(:version => 20130322140424) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -48,10 +48,10 @@ ActiveRecord::Schema.define(:version => 20130322133904) do
     t.text     "description"
     t.string   "image_url"
     t.decimal  "price",       :precision => 10, :scale => 2
-    t.datetime "created_at",                                                        :null => false
-    t.datetime "updated_at",                                                        :null => false
-    t.string   "category",                                   :default => "default"
+    t.datetime "created_at",                                                :null => false
+    t.datetime "updated_at",                                                :null => false
     t.integer  "stock",                                      :default => 1
+    t.integer  "category_id",                                :default => 1
   end
 
   create_table "users", :force => true do |t|
