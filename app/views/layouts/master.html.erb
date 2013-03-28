@@ -69,8 +69,10 @@
                 <% if @current_user.admin? %>
                 <li class="divider"></li>
                 <li><%= link_to "Users", users_path %></li>
-                <% end %>
+                <li><%= link_to "Products", categories_path %></li>
+                <li><%= link_to "Orders", orders_path %></li>
                 <li class="divider"></li>
+                <% end %>
                 <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
               </ul>
               </li>

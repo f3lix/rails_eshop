@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   layout 'cat'
   # GET /categories
   # GET /categories.json
+  # before_filter :admin_user, only: [:edit, :destroy]
+
   def index
     @categories = Category.all
     @products = Product.all
@@ -85,5 +87,11 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def admin_user
+    redirect_to store_path unless current_user.admin?
   end
 end
