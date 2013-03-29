@@ -4,12 +4,15 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     # @orders = Order.all
-    @orders = Order.paginate page: params[:page], order: 'created_at desc', per_page: 5
+    @orders = current_user.orders.paginate page: params[:page], order: 'created_at desc', per_page: 5
+    # @orders = Order.paginate page: params[:page], order: 'created_at desc', per_page: 5
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @orders }
     end
+    rescue ActiveRecord::RecordNotFound
+    redirect_to store_url
   end
 
   # GET /orders/1
@@ -55,6 +58,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    @order.user_id = current_user.id
 
     respond_to do |format|
       if @order.save
