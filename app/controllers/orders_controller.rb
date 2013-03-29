@@ -4,7 +4,11 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     # @orders = Order.all
-    @orders = current_user.orders.paginate page: params[:page], order: 'created_at desc', per_page: 5
+    if current_user.admin?
+      @orders = Order.paginate page: params[:page], order: 'created_at desc', per_page: 5
+    else
+      @orders = current_user.orders.paginate page: params[:page], order: 'created_at desc', per_page: 5
+    end
     # @orders = Order.paginate page: params[:page], order: 'created_at desc', per_page: 5
 
     respond_to do |format|
