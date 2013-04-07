@@ -2,17 +2,22 @@
 <h1>All users</h1>
 
 <%= will_paginate %>
-<div class="users">
+<table class="table table-hover table-bordered">
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th></th>
+  </tr>
   <% @users.each do |u| %>
-  <%= gravatar_for u %>
-  <br />
-  <h4><%= link_to u.name, u %></h4>
-  <% if current_user.admin? && !current_user?(u) %>
-  <%= link_to "delete", u, method: :delete, confirm: "Are you sure?", class: 'btn' %>
-  &nbsp;
-  <br />
-  <br />
+  <tr>
+    <td><%= gravatar_for u %></td>
+    <td><%= link_to u.name, u %></td>
+    <td>
+    <% if current_user.admin? && !current_user?(u) %>
+    <%= link_to "delete", u, method: :delete, confirm: "Are you sure?", class: 'btn' %>
+    <% end %>
+    </td>
   <% end %>
-  <% end %>
-</div>
+  </tr>
+</table>
 <%= will_paginate %>
