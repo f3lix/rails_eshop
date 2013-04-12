@@ -8,9 +8,7 @@
     <th>Pay type</th>
     <th>Status</th>
     <th>Create Time</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Action</th>
   </tr>
 
 <% @orders.each do |order| %>
@@ -21,9 +19,9 @@
     <td><%= order.pay_type %></td>
     <td><%= order.status %></td>
     <td><%= order.created_at %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Show', order, class: 'btn btn-info' %>
+    <%= link_to 'Edit', edit_order_path(order), class: 'btn btn-success' %>
+    <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-warning' %></td>
   </tr>
 <% end %>
 </table>

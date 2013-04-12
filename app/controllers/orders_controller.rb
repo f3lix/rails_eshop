@@ -4,6 +4,10 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     # @orders = Order.all
+    if current_user == nil
+      redirect_to signin_path, notice: 'Please signin to view your orders.'
+      return
+    end
     if current_user.admin?
       @orders = Order.paginate page: params[:page], order: 'created_at desc', per_page: 5
     else
