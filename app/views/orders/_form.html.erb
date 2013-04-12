@@ -26,11 +26,13 @@
     <%= f.label :pay_type %><br />
     <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method' %>
   </div>
+  <% if signed_in %>
   <% if @current_user.admin? %>
   <div class="field">
     <%= f.label :status %><br />
     <%= f.select :status, Order::STATUS_TYPES, prompt: 'Select a payment method' %>
   </div>
+  <% end %>
   <% end %>
   <div class="actions">
     <%= f.submit 'Place order', class: 'btn' %>
