@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411054057) do
+ActiveRecord::Schema.define(:version => 20130422032811) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -23,6 +23,24 @@ ActiveRecord::Schema.define(:version => 20130411054057) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "groupons", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.decimal  "price",          :precision => 10, :scale => 0
+    t.decimal  "original_price", :precision => 10, :scale => 0
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
+  end
+
+  create_table "kindeditor_assets", :force => true do |t|
+    t.string   "asset"
+    t.string   "file_name"
+    t.integer  "file_size"
+    t.string   "file_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "line_items", :force => true do |t|
@@ -54,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130411054057) do
     t.datetime "updated_at",                                                :null => false
     t.integer  "stock",                                      :default => 1
     t.integer  "category_id",                                :default => 1
+    t.string   "kindeditor"
   end
 
   create_table "users", :force => true do |t|

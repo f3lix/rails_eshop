@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @groupon.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @groupon.description %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @groupon.price %>
+</p>
+
+<p>
+  <b>Original price:</b>
+  <%= @groupon.original_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_groupon_path(@groupon) %> |
+<%= link_to 'Back', groupons_path %>

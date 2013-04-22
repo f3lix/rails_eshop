@@ -1,8 +1,8 @@
 <%= provide(:title, "Home") %>
 <div class="hero-unit">
-  <h1>Best offer today!</h1>
+  <h1>Best offers today!</h1>
   <p>I went to the woods because I wished to live deliberately, to front only the essential facts of life, and see if I could not learn what it had to teach, and not, when I came to die, discover that I had not lived.</p>
-  <p><%= button_to('Order Now', { controller: 'about', action: 'index' }, class: 'btn btn-primary btn-large') %></p>
+  <p><%= link_to 'Order Now', groupons_path, class: 'btn btn-primary btn-large' %></p>
 </div>
 <% if notice %>
 <p id="notice"><%= notice %></p>

@@ -1,0 +1,29 @@
+<h1>Listing groupons</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Original price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @groupons.each do |groupon| %>
+  <tr>
+    <td><%= groupon.title %></td>
+    <td><%= groupon.description %></td>
+    <td><%= groupon.price %></td>
+    <td><%= groupon.original_price %></td>
+    <td><%= link_to 'Show', groupon %></td>
+    <td><%= link_to 'Edit', edit_groupon_path(groupon) %></td>
+    <td><%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Groupon', new_groupon_path %>

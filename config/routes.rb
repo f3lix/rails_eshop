@@ -1,4 +1,7 @@
 RailsEshop::Application.routes.draw do
+  resources :groupons
+
+
   resources :categories
 
 
