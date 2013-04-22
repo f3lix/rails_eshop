@@ -1,13 +1,17 @@
 <%= provide(:title, 'Groupon') %>
 <h1>Best offers today!</h1>
-<div class="row-fluid">
+<div class="rows">
   <ul class="thumbnails">
     <% @groupons.each do |groupon| %>
     <li class="span4">
       <div class="thumbnail">
         <div class="caption">
+          <%= image_tag '300_200.png' %>
           <h3><%= groupon.title %></h3>
-          <p><%= groupon.price %></p>
+          <p>Price: <%= groupon.price %></p>
+          <% @dis = ((1 - (groupon.original_price - groupon.price) / groupon.original_price.to_f) * 100).round %>
+          <p><%= @dis %>% off</p>
+          <p><%= groupon.stock %> items left</p>
           <p><%= link_to 'Show', groupon, class: 'btn btn-primary' %> <%= link_to 'Edit', edit_groupon_path(groupon), class: 'btn' %> <%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></p>
         </div>
       </div>
