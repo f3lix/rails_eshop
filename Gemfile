@@ -55,3 +55,6 @@ gem 'bootstrap-will_paginate'
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
 end
+
+# kindeditor
+gem 'rails_kindeditor', '~> 0.3.14'
