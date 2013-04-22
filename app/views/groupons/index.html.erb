@@ -1,29 +1,18 @@
-<h1>Listing groupons</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Original price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @groupons.each do |groupon| %>
-  <tr>
-    <td><%= groupon.title %></td>
-    <td><%= groupon.description %></td>
-    <td><%= groupon.price %></td>
-    <td><%= groupon.original_price %></td>
-    <td><%= link_to 'Show', groupon %></td>
-    <td><%= link_to 'Edit', edit_groupon_path(groupon) %></td>
-    <td><%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<%= provide(:title, 'Groupon') %>
+<h1>Best offers today!</h1>
+<div class="row-fluid">
+  <ul class="thumbnails">
+    <% @groupons.each do |groupon| %>
+    <li class="span4">
+      <div class="thumbnail">
+        <div class="caption">
+          <h3><%= groupon.title %></h3>
+          <p><%= groupon.price %></p>
+          <p><%= link_to 'Show', groupon, class: 'btn btn-primary' %> <%= link_to 'Edit', edit_groupon_path(groupon), class: 'btn' %> <%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></p>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 <%= link_to 'New Groupon', new_groupon_path %>
