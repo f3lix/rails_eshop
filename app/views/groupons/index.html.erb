@@ -9,12 +9,22 @@
           <%= image_tag '300_200.png' %>
           <h3><%= groupon.title %></h3>
           <p>Price: <%= groupon.price %></p>
-          <% @dis = ((1 - (groupon.original_price - groupon.price) / groupon.original_price.to_f) * 100).round %>
-          <% @TimeLeft = ((Time.now - groupon.created_at) / 3600).round %>
+          
+          <% @TimeLeft = (((groupon.created_at + groupon.duration * 3600) - Time.now) / 3600).round %>
           <p><%= @dis %>% off</p>
           <p><%= groupon.stock %> items left</p>
+          <% if @TimeLeft >= 0 %>
           <p><%= @TimeLeft %> hours left</p>
+          <% else %>
+          <p>Finished already</p>
+          <% end %>
+          <% if @TimeLeft >= 0 %>
+          <p><%= button_to 'Order Now', '#', class: 'btn' %></p>
           <p><%= link_to 'Show', groupon, class: 'btn btn-primary' %> <%= link_to 'Edit', edit_groupon_path(groupon), class: 'btn' %> <%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></p>
+          <% else %>
+          <p><%= button_to 'Finished', '#', disabled: true, class: 'btn' %></p>
+          <p><%= link_to 'Show', groupon, class: 'btn btn-primary' %> <%= link_to 'Edit', edit_groupon_path(groupon), class: 'btn' %> <%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></p>
+          <% end %>
         </div>
       </div>
     </li>
