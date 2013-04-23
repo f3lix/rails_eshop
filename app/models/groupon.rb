@@ -1,9 +1,9 @@
 class Groupon < ActiveRecord::Base
   attr_accessible :description, :original_price, :price, :title, :stock, :created_at, :duration
 
-  has_many :line_items
+  #has_many :line_items
 
-  before_destroy :ensure_not_referenced_by_any_line_item
+  #before_destroy :ensure_not_referenced_by_any_line_item
 
   private
 
