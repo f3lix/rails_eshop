@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423140937) do
+ActiveRecord::Schema.define(:version => 20130424173503) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(:version => 20130423140937) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "groupon_links", :force => true do |t|
+    t.integer  "groupon_id"
+    t.integer  "cart_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "quantity",   :default => 1
+    t.integer  "order_id"
   end
 
   create_table "groupons", :force => true do |t|

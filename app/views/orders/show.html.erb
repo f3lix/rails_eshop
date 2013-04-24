@@ -26,6 +26,17 @@
   <b>Status:</b>
   <%= @order.status %>
 </p>
-
+<h3>Order</h3>
+<% @order.line_items.each do |i| %>
+  <% @product = Product.find(i.product_id) %>
+  <p>Title: <%= link_to @product.title, @product, target: '_blank' %></p>
+  <p>Quantity: <%= i.quantity %></p>
+<% end %>
+<h3>Groupon</h3>
+<% @order.groupon_links.each do |i| %>
+  <% @groupon = Groupon.find(i.groupon_id) %>
+  <p>Title: <%= link_to @groupon.title, @groupon, target: '_blank' %></p>
+  <p>Quantity: <%= i.quantity %></p>
+<% end %>
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>

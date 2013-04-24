@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
     end
 
     @cart = current_cart
-    if @cart.line_items.empty?
+    if @cart.line_items.empty? && @cart.groupon_links.empty?
       redirect_to @cart
       return
     end
@@ -66,6 +66,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
+    @order.add_groupon_links_from_cart(current_cart)
     @order.user_id = current_user.id
 
     respond_to do |format|

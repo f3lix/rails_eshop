@@ -1,6 +1,6 @@
 <%= provide(:title, "Shopping Cart") %>
 
-<% if @cart.line_items.empty? %>
+<% if @cart.line_items.empty? && @cart.groupon_links.empty? %>
 
 <h3>Your shopping cart is empty.</h3>
 
@@ -11,9 +11,18 @@
 <p id="notice"><%= notice %></p>
 
 <%= link_to 'Back', products_path, class: 'btn' %>
+<h3>Orders</h3>
 <ul>
   <% @cart.line_items.each do |i| %>
   <li><h4><%= i.product.title %></h4></li>
+  <li><b>Quantity:</b><%= i.quantity %></li>
+  <li><b>Price:</b><%= number_to_currency(i.total_price) %></li>
+  <% end %>
+</ul>
+<h3>Groupons</h3>
+<ul>
+  <% @cart.groupon_links.each do |i| %>
+  <li><h4><%= i.groupon.title %></h4></li>
   <li><b>Quantity:</b><%= i.quantity %></li>
   <li><b>Price:</b><%= number_to_currency(i.total_price) %></li>
   <% end %>

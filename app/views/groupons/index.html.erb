@@ -19,7 +19,7 @@
           <p>Finished already</p>
           <% end %>
           <% if @TimeLeft >= 0 %>
-          <p><%= button_to 'Order Now', '#', class: 'btn' %></p>
+          <p><%= button_to 'Order Now', groupon_links_path(groupon_id: groupon), class: 'btn' %></p>
           <p><%= link_to 'Show', groupon, class: 'btn btn-primary' %> <%= link_to 'Edit', edit_groupon_path(groupon), class: 'btn' %> <%= link_to 'Destroy', groupon, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %></p>
           <% else %>
           <p><%= button_to 'Finished', '#', disabled: true, class: 'btn' %></p>

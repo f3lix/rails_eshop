@@ -1,0 +1,25 @@
+<%= form_for(@groupon_link) do |f| %>
+  <% if @groupon_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@groupon_link.errors.count, "error") %> prohibited this groupon_link from being saved:</h2>
+
+      <ul>
+      <% @groupon_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :groupon_id %><br />
+    <%= f.number_field :groupon_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cart_id %><br />
+    <%= f.number_field :cart_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
