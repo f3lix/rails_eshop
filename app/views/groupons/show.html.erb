@@ -7,21 +7,19 @@
   <%= @groupon.title %>
 </p>
 
-<p>
+<div class="well">
   <b>Description:</b>
   <%= raw @groupon.description %>
-</p>
+</div>
 
-<p>
+<div class="well">
   <b>Price:</b>
   <%= @groupon.price %>
-</p>
-
-<p>
   <b>Original price:</b>
   <%= @groupon.original_price %>
-</p>
+</div>
 
+<%= button_to 'Add to Cart', groupon_links_path(groupon_id: @groupon.id), class: 'btn btn-success' %>
 
 <%= link_to 'Edit', edit_groupon_path(@groupon) %> |
 <%= link_to 'Back', groupons_path %>

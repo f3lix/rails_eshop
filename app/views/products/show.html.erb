@@ -7,30 +7,27 @@
   <%= @category.title %>
 </p>
 
-<p>
-  <b>Title:</b>
-  <%= @product.title %>
-</p>
+<h3><%= @product.title %></h3>
 
-<p>
-  <b>Description:</b>
-</p>
-  <%= raw @product.description %>
-<p>
+<div class="well">
   <%= image_tag(@product.image_url) %>
-</p>
+</div>
 
-<p>
+<div class="well">
   <b>Price:</b>
   <%= number_to_currency(@product.price) %>
-</p>
-
-<p>
   <b>Stock:</b>
   <%= @product.stock %>
-</p>
+</div>
+
+<%= button_to 'Add to Cart', line_items_path(product_id: @product.id), class: 'btn btn-success' %>
+
+<div class="well">
+  <b>Description:</b>
+  <%= raw @product.description %>
+</div>
+
 <% if signed_in && @current_user.admin? %>
 <%= link_to 'Edit', edit_product_path(@product), class: 'btn' %>
 <%= link_to 'Back', products_path, class: 'btn' %>
 <% end %>
-<%= button_to 'Add to Cart', line_items_path(product_id: @product.id), class: 'btn' %>
