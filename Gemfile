@@ -62,3 +62,5 @@ gem 'rails_kindeditor', '~> 0.3.14'
 # upload file
 #gem "file-column", "~> 0.3.2"
 #gem "rmagick", "~> 2.13.2"
+
+gem "meta_search"

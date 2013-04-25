@@ -1,40 +1,34 @@
 <%= provide(:title, "Products") %>
 
-<h1>Listing products</h1>
-
-<table>
-  <!--
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Image url</th>
-    <th>Price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
--->
-<% @products.each do |p| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td><%= image_tag(p.image_url, class: 'list_image') %></td>
-    <td class="list-description">
-      <dl>
-        <dt><b><%= p.title %></b></dt>
-        <dd><%= raw p.description %></dd>
-      </dl>
-    </td>
-    <td><p class="price"><%= number_to_currency(p.price) %></p></td>
-    <td class="list_actions">
-      <p><%= link_to 'View', p, class: 'btn' %></p>
-      <% if signed_in && @current_user.admin? %>
-      <p><%= link_to 'Edit', edit_product_path(p) , class: 'btn'%></p>
-      <p><%= link_to 'Destroy', p, confirm: 'Are you sure?', method: :delete, class: 'btn' %></p>
-      <% end %>
-      <p><%= button_to 'Add to Cart', line_items_path(product_id: p), class: 'btn' %></p>
-    </td>
-  </tr>
-<% end %>
-</table>
+<div class="rows">
+  <ul class="thumbnails">
+    <% @products.each do |p| %>
+    <li class="span4" style="height: 700px;">
+      <div class="thumbnail">
+        <div class="caption">
+          <td><%= image_tag(p.image_url, class: 'list_image') %></td>
+          <h3><%= p.title %></h3>
+          <p>Price: <%= p.price %></p>
+          <% if p.stock <= 0 %>
+          <p>Out of stock</p>
+          <p><%= button_to 'Out of Stock', '#', disabled: true, class: 'btn' %></p>
+          <% else %>
+          <p><%= p.stock %> items left</p>
+          <p><%= button_to 'Add to Cart', line_items_path(product_id: p), class: 'btn btn btn-success' %></p>
+          <% end %>
+          <p><%= link_to 'View Details', p, class: 'btn btn-primary' %>
+          <% if signed_in %>
+          <% if @current_user.admin? %>
+          <%= link_to 'Edit', edit_product_path(p), class: 'btn' %> <%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn' %>
+          <% end %>
+          <% end %>
+          </p>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
 <br />
 <% if signed_in && @current_user.admin? %>
 <%= link_to 'New Product', new_product_path %>

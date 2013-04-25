@@ -56,13 +56,16 @@
               <li><%= link_to('Home', store_path, class: 'active') %></li>
               <li><%= link_to('Products', categories_path) %></li>
               <li><%= link_to('Groupon', groupons_path) %></li>
+              <li><%= link_to('Search', { controller: 'search', action: 'index' }) %></li>
               <li><%= link_to('About', { controller: 'about', action: 'index' }) %></li>
             </ul>
+            <!--
             <div class="nav-collapse collapse">
               <form class="navbar-search pull-left">
                 <input type="text" class="search-query" placeholder="Search">
               </form>
             </div>
+          -->
             <ul class="nav pull-right">
               <li><%= link_to('Shopping Cart (' + number_to_currency(current_cart.total_price) + ')', { controller: 'carts', action: 'show', id: session[:cart_id] }) %></li>
               <% if signed_in %>

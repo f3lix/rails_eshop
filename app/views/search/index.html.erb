@@ -1,0 +1,7 @@
+<%= provide(:title, "Search Results") %>
+
+<%= form_for @search, :url => products_path, :html => {:method => :get} do |f| %>
+  <%= f.text_field :title_or_description_contains %><br />
+  <!-- etc... -->
+  <%= f.submit %>
+<% end %>
