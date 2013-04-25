@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   before_filter :signed_in_user, only: [:index, :edit, :update]
   before_filter :correct_user, only: [:edit, :update]
-  before_filter :admin_user, only: [:index, :destroy, :edit, :update]
+  before_filter :admin_user, only: [:index, :destroy]
 
   def index
     # @users = User.all
@@ -67,8 +67,12 @@ class UsersController < ApplicationController
   end
 
   def correct_user
-    @user = User.find(params[:id])
-    redirect_to store_path unless current_user?(@user)
+    if current_user.admin
+    
+    else
+      @user = User.find(params[:id])
+      redirect_to store_path unless current_user?(@user)
+    end
   end
 
   def admin_user
