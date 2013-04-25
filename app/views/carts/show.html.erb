@@ -10,25 +10,35 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back', products_path, class: 'btn' %>
+<% if @cart.line_items.count > 0 %>
+<div class="well">
 <h3>Orders</h3>
-<ul>
+<div>
   <% @cart.line_items.each do |i| %>
-  <li><h4><%= i.product.title %></h4></li>
-  <li><b>Quantity:</b><%= i.quantity %></li>
-  <li><b>Price:</b><%= number_to_currency(i.total_price) %></li>
+  <div><h4><%= link_to i.product.title, i.product %></h4></div>
+  <div><b>Quantity:</b><%= i.quantity %></div>
+  <div><b>Price:</b><%= number_to_currency(i.total_price) %></div>
+  <br />
   <% end %>
-</ul>
+</div>
+</div>
+<% end %>
+<br />
+<% if @cart.groupon_links.count > 0 %>
+<div class="well">
 <h3>Groupons</h3>
-<ul>
+<div>
   <% @cart.groupon_links.each do |i| %>
-  <li><h4><%= i.groupon.title %></h4></li>
-  <li><b>Quantity:</b><%= i.quantity %></li>
-  <li><b>Price:</b><%= number_to_currency(i.total_price) %></li>
+  <div><h4><%= link_to i.groupon.title, i.groupon %></h4></div>
+  <div><b>Quantity:</b><%= i.quantity %></div>
+  <div><b>Price:</b><%= number_to_currency(i.total_price) %></div>
   <% end %>
-</ul>
-<h3><b>Total Price:</b><%= number_to_currency(@cart.total_price) %></h3>
-<%= button_to 'Checkout', new_order_path, method: :get, class: "btn" %>
-<%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn" %>
+</div>
+</div>
+<% end %>
 
+<h3><b>Total Price:</b><%= number_to_currency(@cart.total_price) %></h3>
+<%= button_to 'Checkout', new_order_path, method: :get, class: "btn btn-success" %>
+<%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn btn-warning" %>
+<%= link_to 'Back', categories_path, class: 'btn btn-primary' %>
 <% end %>
