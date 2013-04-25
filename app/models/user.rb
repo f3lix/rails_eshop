@@ -14,7 +14,7 @@
 
 class User < ActiveRecord::Base
   has_many :orders
-  attr_accessible :email, :name, :password, :password_confirmation
+  attr_accessible :email, :name, :password, :password_confirmation, :gender, :age, :phone_number, :address, :post_code
   has_secure_password
 
   before_save { |user| user.email = email.downcase }

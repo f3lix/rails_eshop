@@ -45,7 +45,7 @@
 </div>
 <% if signed_in %>
 <% if @current_user.admin? %>
-<p><%= link_to 'Edit', edit_order_path(@order) %></p>
+<p><%= link_to 'Edit', edit_order_path(@order), class: 'btn btn-primary' %></p>
 <% end %>
 <% end %>
 <p><%= link_to 'Back', orders_path, class: 'btn btn-primary' %></p>
