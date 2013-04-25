@@ -1,4 +1,5 @@
 class GrouponLinksController < ApplicationController
+  layout 'starter'
   # GET /groupon_links
   # GET /groupon_links.json
   def index
@@ -48,7 +49,7 @@ class GrouponLinksController < ApplicationController
 
     respond_to do |format|
       if @groupon_link.save
-        format.html { redirect_to @groupon_link.cart, notice: 'Groupon link was successfully created.' }
+        format.html { redirect_to @groupon_link.cart, notice: 'Groupon was successfully added.' }
         format.json { render json: @groupon_link, status: :created, location: @groupon_link }
       else
         format.html { render action: "new" }
@@ -64,7 +65,7 @@ class GrouponLinksController < ApplicationController
 
     respond_to do |format|
       if @groupon_link.update_attributes(params[:groupon_link])
-        format.html { redirect_to @groupon_link, notice: 'Groupon link was successfully updated.' }
+        format.html { redirect_to @groupon_link.cart, notice: 'Groupon was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

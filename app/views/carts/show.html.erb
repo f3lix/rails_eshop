@@ -6,10 +6,6 @@
 
 <% else %>
 
-<%= provide(:title, "Shopping Cart") %>
-
-<p id="notice"><%= notice %></p>
-
 <% if @cart.line_items.count > 0 %>
 <div class="well">
 <h3>Orders</h3>
@@ -18,7 +14,7 @@
   <div><h4><%= link_to i.product.title, i.product %></h4></div>
   <div><b>Quantity:</b><%= i.quantity %></div>
   <div><b>Price:</b><%= number_to_currency(i.total_price) %></div>
-  <br />
+  <div><%= link_to 'Edit', edit_line_item_path(i), class: 'btn btn-success' %></div>
   <% end %>
 </div>
 </div>
@@ -32,6 +28,7 @@
   <div><h4><%= link_to i.groupon.title, i.groupon %></h4></div>
   <div><b>Quantity:</b><%= i.quantity %></div>
   <div><b>Price:</b><%= number_to_currency(i.total_price) %></div>
+  <div><%= link_to 'Edit', edit_groupon_link_path(i), class: 'btn btn-success' %></div>
   <% end %>
 </div>
 </div>
@@ -42,3 +39,7 @@
 <%= button_to 'Empty Cart', @cart, method: :delete, confirm: 'Are you sure?', class: "btn btn-warning" %>
 <%= link_to 'Back', categories_path, class: 'btn btn-primary' %>
 <% end %>
+
+<footer style="margin-top: 50px; margin-bottom: 50px;">
+  <p>&copy; Copyright 2013 RailsEshop. All rights reserved</p>
+</footer>

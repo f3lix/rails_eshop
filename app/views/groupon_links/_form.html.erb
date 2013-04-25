@@ -2,7 +2,6 @@
   <% if @groupon_link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@groupon_link.errors.count, "error") %> prohibited this groupon_link from being saved:</h2>
-
       <ul>
       <% @groupon_link.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -11,15 +10,13 @@
     </div>
   <% end %>
 
+  <% @groupon = Groupon.find(@groupon_link.groupon_id) %>
+  <h3><%= link_to @groupon.title, @groupon %></h3>
   <div class="field">
-    <%= f.label :groupon_id %><br />
-    <%= f.number_field :groupon_id %>
-  </div>
-  <div class="field">
-    <%= f.label :cart_id %><br />
-    <%= f.number_field :cart_id %>
+    <%= f.label :quantity %><br />
+    <%= f.number_field :quantity %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Update', class: 'btn btn-success' %>
   </div>
 <% end %>
