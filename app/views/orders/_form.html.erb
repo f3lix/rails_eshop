@@ -15,12 +15,20 @@
     <%= f.text_field :name, size: 40, value: current_user.name, readonly: true %>
   </div>
   <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address, rows: 3, cols: 40 %>
-  </div>
-  <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email, size: 40, value: current_user.email, readonly: true %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address, rows: 3, cols: 40, value: current_user.address %>
+  </div>
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.text_field :post_code, value: current_user.post_code %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number, value: current_user.phone_number %>
   </div>
   <div class="field">
     <%= f.label :pay_type %><br />
@@ -35,6 +43,6 @@
   <% end %>
   <% end %>
   <div class="actions">
-    <%= f.submit 'Place order', class: 'btn' %>
+    <%= f.submit 'Place order', class: 'btn btn-success' %>
   </div>
 <% end %>
