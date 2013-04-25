@@ -11,6 +11,8 @@ Category.delete_all
 Category.create(id: 1, title: 'CAT ONE', description: 'This is category one.')
 Category.create(id: 2, title: 'CAT TWO', description: 'This is category two.')
 Category.create(id: 3, title: 'CAT THREE', description: 'This is category three.')
+Category.create(id: 4, title: 'CAT FOUR', description: 'This is category four.')
+Category.create(id: 5, title: 'CAT FIVE', description: 'This is category five.')
 
 Product.delete_all
 
@@ -87,6 +89,107 @@ Product.create(title: 'The Definitive Guide to HTML5',
 	image_url: 'html5.jpg',
 	price: 25.10, category_id: 3, stock: 10)
 
+Product.create(title: 'Machine Learning: A Probabilistic Perspective',
+	description: %{<p>Today's Web-enabled deluge of electronic data calls for automated methods of data analysis.</p>},
+	image_url: 'img1.jpg',
+	price: 25.10, category_id: 4, stock: 10)
+	
+Product.create(title: 'Data Mining: Practical Machine Learning Tools and Techniques, Third Edition',
+	description: %{<p>Data Mining: Practical Machine Learning Tools and Techniques offers a thorough grounding in machine learning concepts as well as practical advice on applying machine learning tools and techniques in real-world data mining situations.</p>},
+	image_url: 'img2.jpg',
+	price: 35.10, category_id: 4, stock: 40)
+
+Product.create(title: 'Mining the Social Web: Analyzing Data from Facebook, Twitter, LinkedIn, and Other Social Media Sites',
+	description: %{<p>Want to tap the tremendous amount of valuable social data in Facebook, Twitter, LinkedIn, and Google+?</p>},
+	image_url: 'img3.jpg',
+	price: 25.50, category_id: 4, stock: 20)
+
+Product.create(title: 'Natural Language Processing with Python',
+	description: %{<p>This book offers a highly accessible introduction to natural language processing, the field that supports a variety of language technologies, from predictive text and email filtering to automatic summarization and translation.</p>},
+	image_url: 'img4.jpg',
+	price: 22.10, category_id: 4, stock: 120)
+
+Product.create(title: 'Python Text Processing with NLTK 2.0 Cookbook',
+	description: %{<p>Use Python's NLTK suite of libraries to maximize your Natural Language Processing capabilities.</p>},
+	image_url: 'img5.jpg',
+	price: 22.10, category_id: 4, stock: 122)
+
+Product.create(title: 'Machine Learning in Action',
+	description: %{<p>Web mining aims to discover useful information and knowledge from Web hyperlinks, page contents, and usage data.</p>},
+	image_url: 'img6.jpg',
+	price: 31.10, category_id: 4, stock: 32)
+
+Product.create(title: 'Programming Collective Intelligence: Building Smart Web 2.0 Applications',
+	description: %{<p>Although Web mining uses many conventional data mining techniques.</p>},
+	image_url: 'img7.jpg',
+	price: 312.10, category_id: 4, stock: 32)
+	
+Product.create(title: 'Think Stats',
+	description: %{<p>It is not purely an application of traditional data mining due to the semi-structured and unstructured nature of the Web data.</p>},
+	image_url: 'img8.jpg',
+	price: 43.10, category_id: 4, stock: 12)
+	
+Product.create(title: 'SciPy and NumPy: An Overview for Developers',
+	description: %{<p>The field has also developed many of its own algorithms and techniques. Liu has written a comprehensive text on Web mining, which consists of two parts.</p>},
+	image_url: 'img9.jpg',
+	price: 32.10, category_id: 4, stock: 10)
+	
+Product.create(title: 'Mahout in Action',
+	description: %{<p>The first part covers the data mining and machine learning foundations, where all the essential concepts and algorithms of data mining and machine learning are presented.</p>},
+	image_url: 'img10.jpg',
+	price: 25.10, category_id: 4, stock: 10)
+
+Product.create(title: 'Programming Challenges',
+	description: %{<p>The Virals are put to the ultimate test when they find a geocache containing an ornate puzzle box.</p>},
+	image_url: 'img11.jpg',
+	price: 312.10, category_id: 5, stock: 23)
+
+Product.create(title: 'Elements of Programming Interviews: 300 Questions and Solutions',
+	description: %{<p>Shelton decodes the cipher inside, only to find more tantalizing clues left by "The Gamemaster." </p>},
+	image_url: 'img12.jpg',
+	price: 32.10, category_id: 5, stock: 10)
+
+Product.create(title: 'Top 10 coding interview problems asked in Google with solutions: Algorithmic Approach',
+	description: %{<p>A second, greater geocache is within reach--if the Virals are up to the challenge.</p>},
+	image_url: 'img13.jpg',
+	price: 12.10, category_id: 5, stock: 43)
+
+Product.create(title: 'Cracking the Coding Interview: 150 Programming Questions and Solutions',
+	description: %{<p>But the hunt takes a dark turn when Tory locates the other box.</p>},
+	image_url: 'img14.jpg',
+	price: 25.10, category_id: 5, stock: 11)
+
+Product.create(title: 'Programming Pearls (2nd Edition)',
+	description: %{<p>Now, the real game has begun: another bomb is out there--a real one--and the clock is ticking.</p>},
+	image_url: 'img15.jpg',
+	price: 232.10, category_id: 5, stock: 54)
+
+Product.create(title: 'Introduction to Algorithms',
+	description: %{<p>Tory Brennan, niece of acclaimed forensic anthropologist Temperance Brennan.</p>},
+	image_url: 'img16.jpg',
+	price: 321.10, category_id: 5, stock: 32)
+
+Product.create(title: 'Concrete Mathematics: A Foundation for Computer Science (2nd Edition)',
+	description: %{<p>who live on a secluded island off the coast of South Carolina.</p>},
+	image_url: 'img17.jpg',
+	price: 32.10, category_id: 5, stock: 432)
+
+Product.create(title: 'The Algorithm Design Manual',
+	description: %{<p>When the group rescues a dog caged for medical testing on a nearby island.</p>},
+	image_url: 'img18.jpg',
+	price: 32.10, category_id: 5, stock: 32)
+
+Product.create(title: 'Concurrent Programming in Java',
+	description: %{<p>As the friends discover their heightened senses and animal-quick reflexes.</p>},
+	image_url: 'img19.jpg',
+	price: 43.10, category_id: 5, stock: 65)
+
+Product.create(title: 'Inside the C++ Object Model',
+	description: %{<p>if they can stay alive long enough to catch the killer's scent.</p>},
+	image_url: 'img20.jpg',
+	price: 32.10, category_id: 5, stock: 43)
+
 User.create(name: 'Felix Li', email: 'leegyao@gmail.com', password: 'admin@ecnu', password_confirmation: 'admin@ecnu')
 
 User.create(name: 'Rex Lin', email: 'zero2lin@gmail.com', password: 'admin@ecnu', password_confirmation: 'admin@ecnu')
+
