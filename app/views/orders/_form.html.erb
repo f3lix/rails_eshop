@@ -9,7 +9,28 @@
       </ul>
     </div>
   <% end %>
-
+  <% if signed_in && @current_user.admin? %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, size: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email, size: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_area :address, rows: 3, cols: 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :post_code %><br />
+    <%= f.text_field :post_code %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+  <% else %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, size: 40, value: current_user.name, readonly: true %>
@@ -30,6 +51,8 @@
     <%= f.label :phone_number %><br />
     <%= f.text_field :phone_number, value: current_user.phone_number %>
   </div>
+  <% end %>
+  
   <div class="field">
     <%= f.label :pay_type %><br />
     <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Select a payment method' %>
@@ -38,11 +61,15 @@
   <% if @current_user.admin? %>
   <div class="field">
     <%= f.label :status %><br />
-    <%= f.select :status, Order::STATUS_TYPES, prompt: 'Select a payment method' %>
+    <%= f.select :status, Order::STATUS_TYPES, prompt: 'Select a status' %>
+  </div>
+  <div class="field">
+    <%= f.label :comments_seller %><br />
+    <%= f.text_field :comments_seller, rows: 10, cols: 40 %>
   </div>
   <% end %>
   <% end %>
   <div class="actions">
-    <%= f.submit 'Place order', class: 'btn btn-success' %>
+    <%= f.submit 'Update Order', class: 'btn btn-success' %>
   </div>
 <% end %>

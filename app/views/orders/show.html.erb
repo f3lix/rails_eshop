@@ -43,9 +43,17 @@
   <p>Quantity: <%= i.quantity %></p>
 <% end %>
 </div>
+<div class="well">
+<h3>Notification</h3>
+<%= @order.comments_seller %>
+</div>
 <% if signed_in %>
 <% if @current_user.admin? %>
 <p><%= link_to 'Edit', edit_order_path(@order), class: 'btn btn-primary' %></p>
 <% end %>
 <% end %>
 <p><%= link_to 'Back', orders_path, class: 'btn btn-primary' %></p>
+
+<footer style="margin-top: 50px; margin-bottom: 50px;">
+  <p>&copy; Copyright 2013 RailsEshop. All rights reserved</p>
+</footer>

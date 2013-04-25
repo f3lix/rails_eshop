@@ -16,3 +16,31 @@
 <%= link_to 'Update Profile', edit_user_path(@user), class: 'btn btn-primary' %>
 
 </div>
+
+<div class="well">
+<h1>My orders</h1>
+<table class="table table-hover table-bordered">
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Pay type</th>
+    <th>Status</th>
+    <th>Create Time</th>
+    <th>Action</th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= order.status %></td>
+    <td><%= order.created_at %></td>
+    <td><%= link_to 'Show', order, class: 'btn btn-info' %>
+    </td>
+  </tr>
+<% end %>
+</table>
+</div>

@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ "Paypal", "Credit Card", "I don't have any money" ]
   STATUS_TYPES = [ "In Process", "Preparing", "Delivering", "Delivered" ]
 
-  attr_accessible :address, :email, :name, :pay_type, :status, :post_code, :phone_number
+  attr_accessible :address, :email, :name, :pay_type, :status, :post_code, :phone_number, :comments_buyer, :comments_seller
   validates :name, :address, :email, presence: true
   validates :pay_type, inclusion: PAYMENT_TYPES
 
