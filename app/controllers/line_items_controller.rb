@@ -52,7 +52,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         # format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
         # format.html { redirect_to @line_item.cart }
-        format.html { redirect_to store_url }
+        format.html { redirect_to @line_item.cart }
         format.js
         format.json { render json: @line_item, status: :created, location: @line_item }
       else

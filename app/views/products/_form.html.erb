@@ -26,8 +26,12 @@
     <%= f.kindeditor :description, :window_onload => true %>
   </div>
   <div class="field">
+    <%= f.label :stock %><br />
+    <%= f.text_field :stock %>
+  </div>
+  <div class="field">
     <%= f.label :image_url %><br />
-    <%= f.text_field :image_url %>
+    <%= f.text_field :image_url, value: 'default.png' %>
   </div>
   <div class="field">
     <%= f.label :price %><br />

@@ -8,12 +8,13 @@
               <% @categories.each do |category| %>
               <li><%= link_to category.title, category %></li>
                 <% if signed_in && @current_user.admin? %>
-                  <li><%= link_to 'Edit', edit_category_path(category) %></li>
-                  <li><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                  <li><%= link_to '- Edit', edit_category_path(category) %></li>
+                  <li><%= link_to '- Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></li>
                 <% end %>
               <% end %>
               <% if signed_in && @current_user.admin? %>
-                <li><%= link_to 'New Category', new_category_path %></li>
+                <li><b><%= link_to 'New Category', new_category_path %></b></li>
+                <li><b><%= link_to 'New Product', new_product_path %></b></li>
               <% end %>
             </ul>
           </div><!--/.well -->
@@ -72,9 +73,7 @@
         -->
         </div><!--/span-->
 </div><!--/row-->
-<% if signed_in && @current_user.admin? %>
-<%= link_to 'New Product', new_product_path %>
-<% end %>
+
 <footer>
   <p>&copy; Copyright 2013 RailsEshop. All rights reserved</p>
 </footer>
