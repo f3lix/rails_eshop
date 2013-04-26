@@ -13,7 +13,11 @@
           <% @TimeLeft = (((groupon.created_at + groupon.duration * 3600) - Time.now) / 3600).round %>
           <% @days = @TimeLeft / 24 %>
           <% @hours = @TimeLeft % 24 %>
+          <% @ordered = GrouponLink.count(conditions: groupon_id = groupon.id) %>
           <p><%= groupon.stock %> items left</p>
+          <% if @ordered != nil %>
+          <p><%= @ordered %> people ordered</p>
+          <% end %>
           <% if @TimeLeft >= 0 %>
           <p><%= @days %> days <%= @hours %> hours left</p>
           <p><%= button_to 'Order Now', groupon_links_path(groupon_id: groupon), class: 'btn btn-success' %></p>

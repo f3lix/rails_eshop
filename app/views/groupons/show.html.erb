@@ -5,7 +5,6 @@
 <h3><%= @groupon.title %></h3>
 
 <div class="well">
-  <b>Description:</b>
   <%= raw @groupon.description %>
 </div>
 
@@ -16,10 +15,11 @@
   <%= number_to_currency @groupon.original_price %>
 </div>
 	<% @TimeLeft = (((@groupon.created_at + @groupon.duration * 3600) - Time.now) / 3600).round %>
-    <p><%= @dis %>% off</p>
+    <% @days = @TimeLeft / 24 %>
+    <% @hours = @TimeLeft % 24 %>
     <p><%= @groupon.stock %> items left</p>
     <% if @TimeLeft >= 0 %>
-    <p><%= @TimeLeft %> hours left</p>
+    <p><%= @days %> days <%= @hours %> hours left</p>
     <p><%= button_to 'Order Now', groupon_links_path(groupon_id: @groupon), class: 'btn btn-success' %></p>
     <% else %>
     <p>Finished already</p>
