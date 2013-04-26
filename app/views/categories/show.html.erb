@@ -31,7 +31,7 @@
                   <div class="caption">
                     <td><%= image_tag(p.image_url, class: 'list_image') %></td>
                     <h4><%= p.title %></h4>
-                    <p>Price: <%= p.price %></p>
+                    <h4 style="color: rgb(153, 0, 0);">Price: <%= p.price %></h4>
                     <% if p.stock <= 0 %>
                     <p>Out of stock</p>
                     <p><%= button_to 'Out of Stock', '#', disabled: true, class: 'btn' %></p>

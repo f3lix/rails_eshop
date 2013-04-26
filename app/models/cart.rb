@@ -14,8 +14,8 @@ class Cart < ActiveRecord::Base
 
   def add_product(product_id)
   	current_item = line_items.find_by_product_id(product_id)
-    # product = Product.find_by_id(product_id)
-    # product.stock -= 1
+    product = Product.find_by_id(product_id)
+    product.stock -= 1
   	if current_item
   	  current_item.quantity += 1
   	else
@@ -26,8 +26,8 @@ class Cart < ActiveRecord::Base
 
   def add_groupon(groupon_id)
     current_item = groupon_links.find_by_groupon_id(groupon_id)
-    # groupon = Groupon.find_by_id(groupon_id)
-    # groupon.stock -= 1
+    groupon = Groupon.find_by_id(groupon_id)
+    groupon.stock -= 1
     if current_item
       current_item.quantity += 1
     else
