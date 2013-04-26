@@ -14,9 +14,9 @@
           <% @days = @TimeLeft / 24 %>
           <% @hours = @TimeLeft % 24 %>
           <% @ordered = GrouponLink.count(conditions: groupon_id = groupon.id) %>
-          <p><%= groupon.stock %> items left</p>
+          
           <% if @ordered != nil %>
-          <h5><%= @ordered %> people ordered</h5>
+          <h3><%= @ordered %> people ordered</h3>
           <% end %>
           <% if @TimeLeft >= 0 %>
           <h5><%= @days %> days <%= @hours %> hours left</h5>
