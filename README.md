@@ -13,12 +13,15 @@
 <li>Run <b>$ bundle install</b> to resolve dependencies</li>
 <li>Run <b>$ bundle exec rake db:create</b> to create database defined in <b>config/database.yml</b></li>
 <li>Run <b>$ bundle exec rake db:migrate</b> to run the migrations</li>
+<li>Run <b>$ bundle exec rake db:reset</b> to clear the data in your database</li>
 <li>Run <b>$ bundle exec rake db:seed</b> to feed your database with some test data</li>
+<li>Run <b>$ bundle exec rake db:populate</b> to populate some fake data</li>
 <li>Run <b>$ bundle exec rake db:test:prepare</b> to make your database ready</li>
 </ul>
 <h2>How to run</h2>
 <ul>
 <li>Run <b>$ rails s</b> to start WEBrick on port 3000 by default</li>
+<li>You have an admin user account 'sample@gmail.com' with password 'adminadmin'</li>
 </ul>
 <h2>How to test</h2>
 <ul>
