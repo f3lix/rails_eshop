@@ -1,3 +1,5 @@
+<h2>Read this first</h2>
+<p>This repo may not be updated from May 2013 and switch all the dev stuff to a private repo. Mail me if you have any questions.</p>
 <h2>About</h2>
 <ul>
 <li>A simple eshop project created with Ruby on Rails.</li>
